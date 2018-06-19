@@ -26,5 +26,21 @@ namespace KeysProject.Controllers
 
             return View();
         }
+
+        public ActionResult Customers()
+        {
+            return View();
+        }
+
+        public ActionResult Stores()
+        {
+            return View();
+        }
+
+        public ActionResult Sales()
+        {
+            return View();
+        }
+
     }
 }
