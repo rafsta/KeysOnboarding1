@@ -158,6 +158,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\ProductSoldsController.cs" />
+    <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Models\Customer.cs">
       <DependentUpon>KeysModel.tt</DependentUpon>
     </Compile>
@@ -289,6 +292,21 @@
     <Content Include="Views\Home\Customers.cshtml" />
     <Content Include="Views\Home\Stores.cshtml" />
     <Content Include="Views\Home\Sales.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\ProductSolds\Create.cshtml" />
+    <Content Include="Views\ProductSolds\Delete.cshtml" />
+    <Content Include="Views\ProductSolds\Details.cshtml" />
+    <Content Include="Views\ProductSolds\Edit.cshtml" />
+    <Content Include="Views\ProductSolds\Index.cshtml" />
+    <Content Include="Views\Stores\Create.cshtml" />
+    <Content Include="Views\Stores\Delete.cshtml" />
+    <Content Include="Views\Stores\Details.cshtml" />
+    <Content Include="Views\Stores\Edit.cshtml" />
+    <Content Include="Views\Stores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
