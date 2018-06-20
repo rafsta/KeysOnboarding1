@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel.DataAnnotations;
-
 namespace KeysProject.Models
 {
     using System;
@@ -22,17 +20,8 @@ namespace KeysProject.Models
             this.ProductSolds = new HashSet<ProductSold>();
         }
     
-        [Required]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Id is not valid.")]
         public int Id { get; set; }
-        [Required]
-        [RegularExpression("^[a-zA-Z]*$", ErrorMessage = "Name can only contain letters.")]
-        [StringLength(10, MinimumLength = 3, ErrorMessage = "Name should be between 3 and 10 letters")]
         public string Name { get; set; }
-        [Required]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
-        [MaxLength(3, ErrorMessage = "The price cannot be longer than 3 digits.")]
-        [Range(1,999, ErrorMessage = "Price must range from 1 to 999.")]
         public string Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
