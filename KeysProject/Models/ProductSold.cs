@@ -7,21 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Web.UI.WebControls;
+
 namespace KeysProject.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
+
+    [MetadataType(typeof(ProductSoldMetadata))]
     public partial class ProductSold
     {
+        public ProductSold()
+        {
+            this.Customers = new HashSet<Customer>();
+        }
+
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Id is not valid.")]
         public int Id { get; set; }
+        [Required]
+        [Display(Name = "Customer Name")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
         public int CustomerId { get; set; }
+        [Required]
+        [Display(Name = "Product Name")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
         public int ProductId { get; set; }
+        [Required]
+        [Display(Name = "Store Name")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
         public int StoreId { get; set; }
+        [Required]
+        [Display(Name = "Date Sold")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
         public string DateSold { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Product Product { get; set; }
         public virtual Store Store { get; set; }
+
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

@@ -6,8 +6,15 @@ using System.Web;
 
 namespace KeysProject.Models
 {
+    /*
     [MetadataType(typeof(ProductSoldMetadata))]
     public partial class ProductSold
     {
     }
+
+    [MetadataType(typeof(ProductMetadata))]
+    public partial class Product
+    {
+    }
+    */
 }

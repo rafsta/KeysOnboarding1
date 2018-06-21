@@ -17,4 +17,11 @@ namespace KeysProject.Models
         [Display(Name = "Date Sold")]
         public string DateSold;
     }
+
+    public class ProductMetadata
+    {
+        [Required]
+        public int Id;
+
+    }
 }
