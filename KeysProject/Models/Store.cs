@@ -13,7 +13,7 @@ namespace KeysProject.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class Store
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,15 +21,17 @@ namespace KeysProject.Models
         {
             this.ProductSolds = new HashSet<ProductSold>();
         }
-    
+
         [Required]
         [RegularExpression("^[0-9]*$", ErrorMessage = "Id is not valid.")]
         public int Id { get; set; }
         [Required]
         [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Store name can only contain letters.")]
         [StringLength(10, MinimumLength = 3, ErrorMessage = "Store name should be between 3 and 10 letters")]
+        [DisplayName(displayName: "Store Name")]
         public string Name { get; set; }
         [Required]
+        [StringLength(maximumLength: 50, ErrorMessage = "Your address is too long.")]
         public string Address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
