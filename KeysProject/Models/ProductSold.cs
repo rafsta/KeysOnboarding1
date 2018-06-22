@@ -7,45 +7,41 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Web.UI.WebControls;
-
 namespace KeysProject.Models
 {
-
-    [MetadataType(typeof(ProductSoldMetadata))]
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    
     public partial class ProductSold
     {
-        public ProductSold()
-        {
-            this.Customers = new HashSet<Customer>();
-        }
-
+        [Required]
         [RegularExpression("^[0-9]*$", ErrorMessage = "Id is not valid.")]
         public int Id { get; set; }
         [Required]
-        [Display(Name = "Customer Name")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Customer name can only contain letters.")]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "Customer name should be between 3 and 10 letters")]
+        [DisplayName(displayName: "Customer Name")]
         public int CustomerId { get; set; }
         [Required]
-        [Display(Name = "Product Name")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "Product name should be between 3 and 10 letters")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Product name can only contain letters.")]
+        [DisplayName(displayName: "Product Name")]
         public int ProductId { get; set; }
         [Required]
-        [Display(Name = "Store Name")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
+        [DisplayName(displayName: "Store Name")]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Store name can only contain letters.")]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "Store name should be between 3 and 10 letters")]
         public int StoreId { get; set; }
         [Required]
-        [Display(Name = "Date Sold")]
-        [RegularExpression("^[0-9]*$", ErrorMessage = "Price must be a number")]
+        [DisplayName(displayName: "Date Sold")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true,DataFormatString = "{0:MM/dd/yyyy}")]
         public string DateSold { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Product Product { get; set; }
         public virtual Store Store { get; set; }
-
-        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

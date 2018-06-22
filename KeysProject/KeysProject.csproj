@@ -180,8 +180,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KeysModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Metadata.cs" />
-    <Compile Include="Models\PartialClasses.cs" />
     <Compile Include="Models\Product.cs">
       <DependentUpon>KeysModel.tt</DependentUpon>
     </Compile>

@@ -11,6 +11,8 @@ namespace KeysProject.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Store
     {
@@ -20,8 +22,14 @@ namespace KeysProject.Models
             this.ProductSolds = new HashSet<ProductSold>();
         }
     
+        [Required]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Id is not valid.")]
         public int Id { get; set; }
+        [Required]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Store name can only contain letters.")]
+        [StringLength(10, MinimumLength = 3, ErrorMessage = "Store name should be between 3 and 10 letters")]
         public string Name { get; set; }
+        [Required]
         public string Address { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
