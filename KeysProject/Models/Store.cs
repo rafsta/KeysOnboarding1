@@ -33,7 +33,7 @@ namespace KeysProject.Models
         [Required]
         [StringLength(maximumLength: 50, ErrorMessage = "Your address is too long.")]
         public string Address { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductSold> ProductSolds { get; set; }
     }

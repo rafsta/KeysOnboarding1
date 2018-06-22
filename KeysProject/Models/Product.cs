@@ -36,7 +36,7 @@ namespace KeysProject.Models
         [MaxLength(3, ErrorMessage = "The price cannot be longer than 3 digits.")]
         [Range(1, 999, ErrorMessage = "Price must range from 1 to 999.")]
         public string Price { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductSold> ProductSolds { get; set; }
     }
